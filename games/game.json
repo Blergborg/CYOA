@@ -1,0 +1,207 @@
+{
+  "title": "Necromancer's Dungeon",
+  "player": {
+    "sword": true,
+    "apple": true,
+    "lockpick": true,
+    "sledgehammer": false,
+    "Gobo": false,
+    "key": false
+  },
+  "rooms": [
+    {
+      "id": 0,
+      "description": "You wake up in a cold, stone room lit by a single torch.\nYour equipment still seems to be intact.\nYou're here to kill a necromancer that's been sending zombies to attack a nearby village.",
+      "options": [
+        {
+          "text": "Go through the door.",
+          "available": null,
+          "result": null,
+          "gain": null,
+          "lose": null,
+          "goto": 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "description": "You walk down a dimly lit hallway until you come to a fork.",
+      "options": [
+        {
+          "text": "Go left (rustling sound)",
+          "available": null,
+          "result": null,
+          "gain": null,
+          "lose": null,
+          "goto": 2
+        },
+        {
+          "text": "Go right (silent)",
+          "available": null,
+          "result": null,
+          "gain": null,
+          "lose": null,
+          "goto": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "You find a goblin crouched over a pile of garbage.\nIt sounds like he's eating something.",
+      "options": [
+        {
+          "text": "Attack (sword)",
+          "available": null,
+          "result": "As you strike down the goblin an ornate key clatters to the ground. (Gained key)",
+          "gain": "key",
+          "lose": null,
+          "goto": 3
+        },
+        {
+          "text": "Feed (apple)",
+          "available": null,
+          "result": "The goblin thanks you for the food and offers to help you.\nThe necromancer has been forcing him to be a servant. (Gained Gobo, Used apple)",
+          "gain": "Gobo",
+          "lose": "apple",
+          "goto": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "description": "You find a locked wooden door and another path that goes to the left.\nYou think you hear snoring behind the door.",
+      "options": [
+        {
+          "text": "Go left",
+          "available": "!sledgehammer",
+          "result": null,
+          "gain": null,
+          "lose": null,
+          "goto": 4
+        },
+        {
+          "text": "Pick door lock (lockpick)",
+          "available": "lockpick",
+          "result": "You try, but the lock is too complicated.",
+          "gain": null,
+          "lose": null,
+          "goto": 3
+        },
+        {
+          "text": "Break the door (sledgehammer)",
+          "available": "sledgehammer",
+          "result": "The door is turned to splinters with two hits.\nYou hear someone inside shout, \"I'LL MAKE YOU THE NEWEST ADDITION TO MY HOARD!\"",
+          "gain": null,
+          "lose": null,
+          "goto": 5
+        },
+        {
+          "text": "Have Gobo pick the lock. (Gobo)",
+          "available": "Gobo",
+          "result": "Gobo makes quick work of the lock.\nThe door silently swings open.",
+          "gain": null,
+          "lose": null,
+          "goto": 6
+
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "description": "You find a large open room with an ornate chest in the center. The chest is locked.",
+      "options": [
+        {
+          "text": "Pick chest lock (lockpick)",
+          "available": "lockpick",
+          "result": "You manage to pick the chest open, but your pick gets stuck.(Used lockpick)\nInside the chest is a large hammer with the word\"BAN\" inscribed on the side. (Gained sledgehammer)",
+          "gain": "sledgehammer",
+          "lose": "lockpick",
+          "goto": 3
+        },
+        {
+          "text": "Use key (key)",
+          "available": "key",
+          "result": "The chest opens, but the key is now stuck. (Used key)\nInside the chest is a large hammer with the word\"BAN\" inscribed on the side. (Gained sledgehammer)",
+          "gain": "sledgehammer",
+          "lose": "key",
+          "goto": 3
+        },
+        {
+          "text": "\"I'VE GOT THE KEY!\" (Gobo)",
+          "available": "Gobo",
+          "result":"Inside the chest is a large hammer with the word \"BAN\" inscribed on the side. (Gained sledgehammer)",
+          "gain": "sledgehammer",
+          "lose": null,
+          "goto": 3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "description": "As you enter the room, the necromancer launches a fireball.",
+      "options": [
+        {
+          "text": "Defend",
+          "available": null,
+          "result": "Insinctively, you hold the hammer up to protect from the attack.\nYou hear a \"POOF\" as the fireball disappates against the hammer.\n\"CURSES!\" the necromancer spits before disappearing in puff of green smoke.",
+          "gain": null,
+          "lose": null,
+          "goto": 8
+        },
+        {
+          "text": "Evade",
+          "available": null,
+          "result": "You try to roll out of the way, \nbut the necromancer redirects the fireball to hit you in the back.",
+          "gain": null,
+          "lose": null,
+          "goto": 7
+        },
+        {
+          "text": "THROW! (sledgehammer)",
+          "available": null,
+          "result": "You throw the hammer at the necromancer.\nIt passes through the fireball and instantly the flames dissappear.\nThe necromancer is struck in the chest, and dissapears in a bright blue flash.\nWhen you pick up the hammer, you see the image of a screaming man in its face.",
+          "gain": null,
+          "lose": null,
+          "goto": 9
+        }
+      ]
+    },  
+    {
+      "id": 6,
+      "description": "You and Gobo quietly enter the room. In a bed at the back of the room, the necromancer is still snoring.",
+      "options": [
+        {
+          "text": "Smash his head in. (sledgehammer)",
+          "available": "sledgehammer",
+          "result": "You swing down to bring an end to the necromancer.\nThere's a bright blue flash at the moment of impact.\nYou expect to hear the sound of bone cracking, but only get the soft whoosh of a compressed pillow.\nConfused, you look at the hammer to see the image of a sleeping man in its face.",
+          "gain": null,
+          "lose": null,
+          "goto": 9
+        },
+        {
+          "text": "Stab him. (sword)",
+          "available": "sword",
+          "result": "You plunge the sword into the necromancer's chest.\nHe sputters and groans, \"I DON'T DIE SO EASILY, PEASANT. YOU HAVEN'T SEEN THE LAST OF ME.\", before disappearing in a puff of green smoke." ,
+          "gain": null,
+          "lose": null,
+          "goto": 8
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "description": "You died, and the necromancer continues to terrorize the village.",
+      "options":[]
+    },
+    {
+      "id": 8,
+      "description": "You managed to drive off the necromancer.\nFor now, at least.",
+      "options":[]
+    },
+    {
+      "id": 9,
+      "description": "The necromancer has been sealed within the magic hammer.\nYou have saved the village!",
+      "options":[]
+    }
+  ]
+}

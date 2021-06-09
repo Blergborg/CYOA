@@ -1,0 +1,27 @@
+{
+  "title": "Bad game that is bad",
+  "player": {
+    "car_keys": true
+  },
+  "rooms": [
+    {
+      "id": 0,
+      "description": "You've decided to drive your family to the beach on a nice sunny day.",
+      "options": [
+        {
+          "text": "Walk forward.",
+          "available": null,
+          "result": "You have a brain aneurysm walking out the door.",
+          "gain": null,
+          "lose": null,
+          "goto": 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "description": "This is a bad game.",
+      "options":[]
+    }
+  ]
+}
